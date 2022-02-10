@@ -1,0 +1,22 @@
+<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+
+
+<div id="app">
+    <h1>{{titulo}}</h1>
+    <h2>{{saudacao ()}}</h2>
+</div>
+
+
+<script>
+    new Vue ({
+        el:'#app',
+        data:{
+            titulo:'Usando Vue'
+        },
+        methods:{
+            saudacao: function(){
+                return 'Olá novo Usuario'
+            }
+        }
+    })
+</script>
