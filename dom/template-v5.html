@@ -5,7 +5,9 @@
     <h1 v-once>{{titulo}}</h1>
     <h2>{{saudacao ()}}</h2>
     <!-- Utilizando o v-bind (que é uma diretivas ) é possivel acessar o valor de link -->
-    <a v-bind:href="link">Google</a>
+    <a v-bind:href="link">Google</a>   
+    <hr>
+    <p v-html ='linkHtml'></p>
 </div>
 
 
@@ -14,7 +16,8 @@
         el:'#app',
         data:{
             titulo:'Bom dia!!',
-            link: 'https://google.com.br'
+            link: 'https://google.com.br',
+            linkHtml:'<a href ="https://www.gmail.com"> Gmail </a>'
         },
         methods:{
             saudacao: function(){
