@@ -1,0 +1,23 @@
+<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+
+
+<div id="app">
+    <h1>{{contador}}</h1>
+    <button v-on:click="somar">Somar 1</button>
+    <!-- v-on e o evento que escuta a diretiva, e utilizado pra escutar evento e nesse caso disparar o evento de somar -->
+</div>
+
+
+<script>
+    new Vue ({
+        el:'#app',
+        data:{
+            contador:0
+        },
+        methods:{
+            somar(){
+                this.contador ++
+            }
+        }
+    })
+</script>
