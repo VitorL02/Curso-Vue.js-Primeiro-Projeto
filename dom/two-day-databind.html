@@ -2,8 +2,9 @@
 
 <div id="app">
     <h1>{{titulo}}</h1>
-
     <input type="text" v-bind:value ="titulo" v-model="titulo">
+    <!-- Usando o v-model e possivel fazer o two way data bind onde tanto o html altera o que foi controlado pelo javascript (o titulo da instancia do vue),quanto altera o html -->
+
 </div>
 
 <script>
