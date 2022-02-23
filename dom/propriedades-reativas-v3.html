@@ -1,0 +1,52 @@
+
+<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+
+
+<div id="app">
+    <button v-on:click="aumentar">Aumentar</button>
+    <button v-on:click="contador2++">Aumentar 2</button>
+    <button v-on:click="diminuir">Diminuir</button>
+    <p>Contador: {{contador}} | {{contador2}}</p>
+    <p>Resultado: {{ resultado }}</p>
+</div>
+
+<script>
+    new Vue({
+        el:'#app',
+        data:{
+            contador:0,
+            contador2:0,
+
+        },
+        computed:{
+            resultado(){
+
+               return this.contador >= 5 ? 'Maior que Cinco' : 'Menor que cinco'
+            },
+        },
+        // Com o watch e possivel usar as funções async onde o mesmo espera o resultado ser entregue para assim fazer a execução
+        watch:{
+            // Com o Watch e necessario existir essa duplicação,e  necessario informar exatamente o que sera observado,mesmo já sendo descrito como e no caso da linha 17 on o contador está instanciado
+            contador(antigo,novo){
+                console.log(novo,antigo)
+                setTimeout(()=> {
+                    this.contador = 0
+                },2000)
+            }
+        },
+        methods:{
+            aumentar(){
+                this.contador++
+            },
+            diminuir(){
+                this.contador--
+
+            },
+            // resultado(){
+                // console.log('metodo comum') e chamado toda vez independente de usar o contador 1 ou o contador 2
+            //     //tranformado o resultado em metodo para utilizar de fato no paragrafo que consta o resultado
+            //    return this.contador >= 5 ? 'Maior que Cinco' : 'Menor que cinco'
+            // },
+        }
+    })
+</script>
